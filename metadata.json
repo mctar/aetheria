@@ -1,0 +1,8 @@
+{
+  "name": "Aetheria: Sculpted Light",
+  "description": "An interactive exploration of art and science where hand gestures sculpt mathematical particle fields, interpreted by AI.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
