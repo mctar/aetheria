@@ -2,27 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aetheria</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Flower Power</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-      body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #050505; color: white; }
+      body, html { margin: 0; padding: 0; height: 100%; background-color: #0a0a0a; color: white; }
       #root { width: 100%; height: 100%; }
-      canvas { touch-action: none; }
+
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(16px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fade-in { animation: fade-in 0.6s ease-out; }
+
+      @keyframes flash {
+        0% { opacity: 0.9; }
+        100% { opacity: 0; }
+      }
+      .animate-flash { animation: flash 0.3s ease-out forwards; }
+
+      @keyframes pulse-slow {
+        0%, 100% { transform: scale(1); opacity: 0.3; }
+        50% { transform: scale(1.04); opacity: 0.6; }
+      }
+      .animate-pulse-slow { animation: pulse-slow 2s ease-in-out infinite; }
+
+      @keyframes fall {
+        0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+        10% { opacity: 0.7; }
+        100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+      }
+      .animate-fall { animation: fall linear infinite; }
     </style>
   <script type="importmap">
 {
   "imports": {
     "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
-    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.2",
-    "three": "https://aistudiocdn.com/three@^0.181.2",
-    "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.7",
-    "@react-three/postprocessing": "https://aistudiocdn.com/@react-three/postprocessing@^3.0.4",
     "react/": "https://aistudiocdn.com/react@^19.2.1/",
     "react": "https://aistudiocdn.com/react@^19.2.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
-    "@mediapipe/tasks-vision": "https://aistudiocdn.com/@mediapipe/tasks-vision@^0.10.22-rc.20250304"
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/"
   }
 }
 </script>

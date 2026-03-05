@@ -1,8 +1,7 @@
 {
-  "name": "Aetheria: Sculpted Light",
-  "description": "An interactive exploration of art and science where hand gestures sculpt mathematical particle fields, interpreted by AI.",
+  "name": "Flower Power",
+  "description": "Take a selfie and discover what flower matches your vibe! AI-powered flower personality matching.",
   "requestFramePermissions": [
-    "camera",
-    "microphone"
+    "camera"
   ]
 }
